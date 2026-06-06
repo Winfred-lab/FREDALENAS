@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+
+@theme {
+  --font-display1: "Space Mono", monospace;
+}
+@theme {
+  --font-display2: "Bebas Neue", sans-serif;
+}
+@theme {
+  --font-display3: "Cormorant Garamond", sans-serif;
+}
+@theme {
+  --font-display4: "Barlow", sans-serif;
+}
+@theme {
+  --font-display5: "Montserrat", sans-serif;
+}
+@theme {
+  --background-image: url('/assets/BACKGROUND.jpg');
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: skewX(-15deg);
+}
+
+.shimmer-btn:hover::after {
+  left: 150%;
+  transition: left 0.55s ease;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+ 
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+ 
+@utility animate-scroll-left {
+  animation: scroll-left 25s linear infinite;
+}
+ 
+@utility animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+
