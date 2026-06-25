@@ -1,11 +1,19 @@
-// ─────────────────────────────────────────────────────────────
-// src/data/products.js
-//
-// All product data lives here.
-// `category` is what the filter buttons use to show/hide cards.
-// To add a new product: copy any object, give it a new `id`,
-// and set `category` to one of the values in filterTabs below.
-// ─────────────────────────────────────────────────────────────
+import cakee from '../assets/cake4.png';
+import cupcak from '../assets/cupcak.jpg';
+import redcake from '../assets/redcake.jpg';
+import cake from '../assets/menu2.jpg';
+
+import Beefpie from '../assets/Beefpie.jpg';
+import meatpie from '../assets/menu3.jpg';
+
+import chinCtn from '../assets/menu4.jpg';
+import Saka from '../assets/Sakarpala.jpg';
+
+import eggroll from '../assets/eggrolll.jpg';
+import eggrol from '../assets/eggroll.jpg';
+
+import Burger from '../assets/menu1.jpg';
+import coatedpeanut from '../assets/coated peanut.jpg';
 
 export const products = [
   {
@@ -18,41 +26,11 @@ export const products = [
     weights: ["1 kg", "2 kg", "Custom"],
     oldPrice: "₦18,000",
     newPrice: "₦14,500",
-    sales: 18,
     rating: "4.9",
     stars: 5,
-    imgBg: "#FDF0E8",
+    image: cakee,
   },
-  {
-    id: 10,
-    category: "cakes",
-    badge: "Sale",          // "Sale" | "Hot" | "New" | null
-    tag: "Signature Bake",
-    name: "Celebration Cakes",
-    desc: "Rich, moist, and beautifully decorated. Baked fresh to order for every occasion.",
-    weights: ["1 kg", "2 kg", "Custom"],
-    oldPrice: "₦18,000",
-    newPrice: "₦14,500",
-    sales: 18,
-    rating: "4.9",
-    stars: 5,
-    imgBg: "#FDF0E8",
-  },
-  {
-    id: 2,
-    category: "burgers",
-    badge: "Hot",
-    tag: "Grill Special",
-    name: "Peanut Burger",
-    desc: "Juicy beef patty topped with our signature peanut sauce. A bold Nigerian twist.",
-    weights: ["Single", "Double", "Family"],
-    oldPrice: "₦5,000",
-    newPrice: "₦3,800",
-    sales: 31,
-    rating: "4.7",
-    stars: 5,
-    imgBg: "#F0F5E8",
-  },
+
   {
     id: 3,
     category: "chin-chin",
@@ -60,13 +38,12 @@ export const products = [
     tag: "Street Favourite",
     name: "Crispy Chin-Chin",
     desc: "Golden, crunchy and perfectly sweetened. Made the old-school way, fried to perfection.",
-    weights: ["50g", "100g", "200g", "300g"],
+    weights: ["100g", "200g", "300g", "Custom"],
     oldPrice: "₦2,500",
     newPrice: "₦1,800",
-    sales: 47,
     rating: "4.8",
     stars: 5,
-    imgBg: "#FDF5E0",
+    image: chinCtn,
   },
   {
     id: 4,
@@ -78,41 +55,25 @@ export const products = [
     weights: ["1 piece", "6 pack", "12 pack"],
     oldPrice: "₦2,500",
     newPrice: "₦1,800",
-    sales: 29,
     rating: "4.9",
     stars: 5,
-    imgBg: "#FBF0E8",
+    image: meatpie,
   },
   {
     id: 5,
     category: "peanuts",
     badge: "Hot",
     tag: "Natural Snack",
-    name: "Roasted Peanuts",
+    name: "Coated Peanuts",
     desc: "Hand-selected groundnuts slow-roasted to perfection. Lightly salted or spiced.",
-    weights: ["100g", "250g", "500g", "1kg"],
+    weights: ["100g", "250g", "1kg"],
     oldPrice: "₦3,000",
     newPrice: "₦2,200",
-    sales: 56,
     rating: "4.8",
     stars: 5,
-    imgBg: "#F5F0E0",
+    image:coatedpeanut,
   },
-  {
-    id: 6,
-    category: "burgers",
-    badge: "New",
-    tag: "Grill Special",
-    name: "Beef Burgers",
-    desc: "Juicy beef patties in a toasted bun, stacked with fresh toppings. Made to order.",
-    weights: ["Single", "Double", "Family"],
-    oldPrice: "₦4,500",
-    newPrice: "₦3,500",
-    sales: 12,
-    rating: "4.6",
-    stars: 4,
-    imgBg: "#EEF0F5",
-  },
+
   {
     id: 7,
     category: "cakes",
@@ -120,13 +81,12 @@ export const products = [
     tag: "Custom Order",
     name: "Birthday Cakes",
     desc: "Custom-designed birthday cakes baked to your taste and theme. Pre-order required.",
-    weights: ["1 kg", "2 kg", "3 kg"],
+    weights: ["1 kg", "2 kg", "Custom"],
     oldPrice: "₦20,000",
     newPrice: "₦16,000",
-    sales: 8,
     rating: "5.0",
     stars: 5,
-    imgBg: "#FDF0F5",
+    image: redcake,
   },
   {
     id: 8,
@@ -138,44 +98,71 @@ export const products = [
     weights: ["50g", "150g", "300g"],
     oldPrice: "₦2,000",
     newPrice: "₦1,500",
-    sales: 39,
     rating: "4.9",
     stars: 5,
-    imgBg: "#F5F8E8",
+    image: Saka,
   },
   {
     id: 9,
     category: "peanuts",
     badge: "New",
     tag: "Natural Snack",
-    name: "Salted Peanuts",
+    name: "Burger Peanuts",
     desc: "Premium groundnuts perfectly salted and slow-roasted for maximum flavour and crunch.",
-    weights: ["100g", "250g", "500g"],
-    oldPrice: "₦2,500",
-    newPrice: "₦1,900",
-    sales: 22,
+    weights: ["500g"],
+    oldPrice: "₦18,500",
+    newPrice: "₦15,000",
     rating: "4.7",
     stars: 5,
-    imgBg: "#F8F5E8",
+    image: Burger,
   },
+  {
+    id: 10,
+    category: "cakes",
+    badge: "Sale",          // "Sale" | "Hot" | "New" | null
+    tag: "Signature Bake",
+    name: "Celebration Cakes",
+    desc: "Rich, moist, and beautifully decorated. Baked fresh to order for every occasion.",
+    weights: ["1 kg", "2 kg", "Custom"],
+    oldPrice: "₦18,000",
+    newPrice: "₦14,500",
+    rating: "4.9",
+    stars: 5,
+    image: cake,
+  },
+  {
+    id: 11,
+    category: "cakes",
+    badge: "Sale",          // "Sale" | "Hot" | "New" | null
+    tag: "Signature Bake",
+    name: "Celebration Cakes",
+    desc: "Rich, moist, and beautifully decorated. Baked fresh to order for every occasion.",
+    weights: ["1 kg", "2 kg", "Custom"],
+    oldPrice: "₦18,000",
+    newPrice: "₦14,500",
+    rating: "4.9",
+    stars: 5,
+    image: cupcak,
+  },
+  
 ];
 
 // Filter tab buttons — `value` must match `category` in products above
 export const filterTabs = [
   { label: "All Products", value: "all" },
-  { label: "Cakes, Cake1, Cake2, Cake3, Cake4",        value: "cakes" },
+  { label: "Cakes",        value: "cakes" },
   { label: "Chin-Chin",    value: "chin-chin" },
   { label: "Meat Pies",    value: "meat-pies" },
   { label: "Peanuts",      value: "peanuts" },
-  { label: "Burgers",      value: "burgers" },
+  // { label: "Burgers",      value: "burgers" },
 ];
 
 // Sidebar categories (Rating + Price Range removed)
 export const sidebarCategories = [
-  { label: "All",        value: "all",       count: 9 },
+  { label: "All",        value: "all",        },
   { label: "Cakes",      value: "cakes",     count: 2 },
   { label: "Chin-Chin",  value: "chin-chin", count: 2 },
   { label: "Meat Pies",  value: "meat-pies", count: 2 },
   { label: "Peanuts",    value: "peanuts",   count: 2 },
-  { label: "Burgers",    value: "burgers",   count: 1 },
+  // { label: "Burgers",    value: "burgers",   count: 1 },
 ];

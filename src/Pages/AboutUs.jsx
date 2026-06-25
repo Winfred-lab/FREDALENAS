@@ -30,13 +30,13 @@ const promises = [
 
 const AboutUs = () => {
   return (
-    <div className="bg-white min-h-screen ">
-      <div className=" bg-[#770523] py-20 px-6">
-        <div className='max-w-3xl mx-auto text-white mt-14'>
-            <p className="text-[#EDC483] font-display5 font-semibold text-[14px] leading-tight mb-3 text-center">
+    <div className="min-h-screen bg-white pt-18">
+      <div className=" bg-[#770523]  ">
+        <div className='relative px-5 py-12 mx-auto overflow-hidden text-center md:py-16 max-w-7xl'>
+            <p className="block text-[10px] tracking-[0.35em] uppercase text-[#E8C97A] mb-3">
             - OUR HERITAGE -
             </p>
-          <h1 className='font-display3 text-[65px] font-semibold text-center tracking-tight text-sm/15'>Baked with Tradition <br /> Served with Pride</h1>
+          <h1 className='mb-3 text-3xl font-bold leading-snug text-white font-display3 md:text-4xl'>Baked with Tradition <br /> Served with Pride</h1>
         </div>
       </div>
 
@@ -71,7 +71,7 @@ const AboutUs = () => {
       </div>          
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-2 max-w-6xl mx-auto gap-8 p-9 font-display5'>
+      <div className='grid max-w-6xl grid-cols-1 gap-8 mx-auto lg:grid-cols-2 p-9 font-display5'>
           <div>
             <p className='mb-3 text-[#DA9100]'>— Our Story —</p>
             <h2 className='text-[25px] mb-3 tracking-tight font-semibold text-[#770523] text-sm/7'>From a home kitchen to every Nigerian table</h2>
@@ -101,14 +101,7 @@ const AboutUs = () => {
           <h1 className='text-[#770523] tracking-tighter text-[30px] font-semibold '>Built on Four Unbreakable Promises</h1>
         </div>
 
-        <div className='
-      grid grid-cols-1 md:grid-cols-2
-      max-w-6xl mx-auto
-      gap-5 sm:gap-6 md:gap-8
-      px-5 sm:px-8 md:px-9
-      py-8 sm:py-10
-      font-display5
-    '>
+        <div className='grid max-w-6xl grid-cols-1 gap-5 px-5 py-8 mx-auto md:grid-cols-2 sm:gap-6 md:gap-8 sm:px-8 md:px-9 sm:py-10 font-display5'>
       {promises.map(({ icon: Icon, title, text }, i) => (
         <div
           key={i}
@@ -157,7 +150,7 @@ const AboutUs = () => {
       <div className="bg-[white] px-6 py-12 sm:py-16 md:py-20">
       <AnimatedSection variant="zoom-in" duration={0.9}>
 
-        <div className="text-center max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto font-display5">
+        <div className="max-w-xs mx-auto text-center sm:max-w-md md:max-w-xl lg:max-w-2xl font-display5">
 
           {/* Heading — scales up smoothly across breakpoints */}
           <h1 className="font-bold tracking-tight text-[#770523]
@@ -175,7 +168,7 @@ const AboutUs = () => {
           </p>
 
           {/* Buttons — stack on mobile, side by side on sm+ */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
 
             <button className="
               shimmer-btn

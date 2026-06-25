@@ -17,6 +17,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/Cartcontext";
 
 // Pages
 import HeroSection  from "./Pages/HeroSection";
@@ -25,19 +26,18 @@ import Testimonial  from "./Pages/Testimonial";
 import Gallery      from "./Pages/Gallery";
 import AboutUs      from "./Pages/AboutUs";
 import ProductsPage from "./Pages/Productspage";
+import ContactPage  from "./Pages/ContactPage";
 
 // Shared layout components
 import Nav    from "./Components/Nav";
 import Footer from "./Components/Footer";
 import StatsSection from "./Components/StatsSection";
+import CustomOrdermodal from "./Components/CustomOrdermodal";
 
 const App = () => {
   return (
+     <CartProvider>
     <div>
-      {/*
-        Nav is OUTSIDE <Routes> → it renders on every page.
-        It is position:fixed in Nav.jsx so it always sits at the top.
-      */}
       <Nav />
 
       <Routes>
@@ -56,29 +56,14 @@ const App = () => {
 
         {/* ABOUT PAGE */}
         <Route path="/about" element={<AboutUs />} />
-
-        {/*
-          PRODUCTS PAGE
-          The route path="/products" must EXACTLY match the
-          `to` prop in Nav.jsx's navLinks array.
-          We set Nav's Product link to to="/products" below.
-        */}
         <Route path="/products" element={<ProductsPage />} />
 
         {/* CONTACT PAGE */}
-        <Route path="/contact" element={<Footer />} />
-
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
-
-      {/*
-        Footer is OUTSIDE <Routes> → renders on every page.
-        Exception: the /contact route also renders Footer
-        inside Routes, which would double it on that page.
-        If you want Footer ONLY in /contact, remove it from here.
-        If you want it on every page, remove it from the /contact Route.
-      */}
       <Footer />
     </div>
+  </CartProvider>
   );
 };
 
