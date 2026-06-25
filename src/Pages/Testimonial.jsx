@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import AnimatedSection from '../components/AnimatedSection'; // ← import added
+import AnimatedSection from '../Components/AnimatedSection'; // ← import added
 
 
 import FullStar from '../assets/Vector1.png';
@@ -49,10 +49,10 @@ const StarRating = ({ count }) => (
 );
 
 const TestimonialCard = ({ testimonial }) => (
-  <div className="bg-white p-9 h-full flex flex-col justify-between">
-    <p className="text-gray-700 leading-relaxed font-display5">{testimonial.text}</p>
-    <div className="flex mt-4 gap-4">
-      <img className="rounded-full w-14 h-14 object-cover" src={testimonial.avatar} />
+  <div className="flex flex-col justify-between h-full bg-white p-9">
+    <p className="leading-relaxed text-gray-700 font-display5">{testimonial.text}</p>
+    <div className="flex gap-4 mt-4">
+      <img className="object-cover rounded-full w-14 h-14" src={testimonial.avatar} />
       <div>
         <h2 className="font-bold font-display5 leading-none text-[13px]">{testimonial.name}</h2>
         <p className="leading-none font-display5 tracking-tight text-[#A8A5A5] text-[12px] mt-1">{testimonial.role}</p>
@@ -132,7 +132,7 @@ export default function TestimonialsSection() {
         </AnimatedSection>
 
         {/* ── DESKTOP: 3 cards stagger up one by one ── */}
-        <div className="hidden lg:grid grid-cols-3 max-w-7xl mx-auto gap-4 p-9">
+        <div className="hidden grid-cols-3 gap-4 mx-auto lg:grid max-w-7xl p-9">
           {testimonials.map((t, index) => (
             // 🎬 ANIMATION 2: Each desktop card fades up with a stagger delay
             // index * 0.15 means: card 1 = 0s, card 2 = 0.15s, card 3 = 0.30s
@@ -152,14 +152,14 @@ export default function TestimonialsSection() {
         {/* ⚠️  We wrap the OUTER div, NOT the individual slides inside.    */}
         {/*     Wrapping slides would break the swipe translateX transform.  */}
         <AnimatedSection variant="fade-up" duration={0.6} className="lg:hidden">
-          <div className="max-w-7xl mx-auto p-4 pt-8">
+          <div className="p-4 pt-8 mx-auto max-w-7xl">
 
             <div className="relative px-6">
               <ArrowBtn direction="left" onClick={prev} disabled={current === 0} />
 
               <div className="overflow-hidden">
                 <div
-                  className="flex transition-transform duration-400 ease-in-out"
+                  className="flex transition-transform ease-in-out duration-400"
                   style={{ transform: `translateX(-${current * 100}%)` }}
                   onTouchStart={handleTouchStart}
                   onTouchMove={handleTouchMove}
@@ -203,7 +203,7 @@ export default function TestimonialsSection() {
     <div className="bg-[white] px-6 py-12 sm:py-16 md:py-20">
       <AnimatedSection variant="zoom-in" duration={0.9}>
 
-        <div className="text-center max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto font-display5">
+        <div className="max-w-xs mx-auto text-center sm:max-w-md md:max-w-xl lg:max-w-2xl font-display5">
 
           {/* Heading — scales up smoothly across breakpoints */}
           <h1 className="font-bold tracking-tight text-[#770523]
@@ -221,7 +221,7 @@ export default function TestimonialsSection() {
           </p>
 
           {/* Buttons — stack on mobile, side by side on sm+ */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
 
             <button className="
               shimmer-btn

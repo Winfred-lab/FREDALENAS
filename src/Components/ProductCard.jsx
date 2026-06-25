@@ -14,7 +14,7 @@
 // ─────────────────────────────────────────────────────────────
 
 import { useState } from "react";
-import CustomOrderModal from "./CustomOrderModal";
+import CustomOrderModal from "../Components/CustomOrdermodal";
 import { useCart } from "../context/Cartcontext";
 
 // Badge color map
