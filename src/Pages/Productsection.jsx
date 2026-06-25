@@ -87,7 +87,7 @@ function StatCard({ num, label, delay }) {
   }, [delay]);
  
   return (
-    <div ref={ref} className='py-4 sm:py-6 px-2'>
+    <div ref={ref} className='px-2 py-4 sm:py-6'>
       {/* Number — scales down on mobile */}
       <h1 className='
         font-display3 font-bold text-[#6B1A2A]
@@ -150,19 +150,19 @@ export default function Product() {
 
       <div className='bg-[#770523] px-5 sm:px-8 py-12 sm:py-16 md:py-20'>
  
-      <div className='grid grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto gap-5 overflow-hidden'>
+      <div className='grid grid-cols-1 gap-5 mx-auto overflow-hidden lg:grid-cols-2 max-w-7xl'>
  
         <AnimatedSection variant="fade-left" delay={0.2}>
           <div className='p-6 sm:p-8 md:p-10 hover:bg-[#f7eedd] bg-white h-full transition-colors duration-300'>
  
-            <div className='flex place-content-between items-center'>
+            <div className='flex items-center place-content-between'>
               {/* Icon scales down on mobile */}
               <ChefHat
                 className='size-9 sm:size-10 md:size-[50px]'
                 color='#DA9100'
               />
               {/* Number scales down on mobile */}
-              <h2 className='text-4xl sm:text-5xl md:text-6xl font-display3 text-gray-200'>
+              <h2 className='text-4xl text-gray-200 sm:text-5xl md:text-6xl font-display3'>
                 01
               </h2>
             </div>
@@ -188,12 +188,12 @@ export default function Product() {
         <AnimatedSection variant="fade-right" delay={0.2}>
           <div className='p-6 sm:p-8 md:p-10 hover:bg-[#f7eedd] bg-white h-full transition-colors duration-300'>
  
-            <div className='flex place-content-between items-center'>
+            <div className='flex items-center place-content-between'>
               <PackageOpen
                 className='size-9 sm:size-10 md:size-[50px]'
                 color='#DA9100'
               />
-              <h2 className='text-4xl sm:text-5xl md:text-6xl font-display3 text-gray-200'>
+              <h2 className='text-4xl text-gray-200 sm:text-5xl md:text-6xl font-display3'>
                 02
               </h2>
             </div>
@@ -225,19 +225,11 @@ export default function Product() {
           🎬 Photo slides in from left, text slides in from right
           They arrive together (same delay) for a mirrored feel
       ══════════════════════════════════════════════════════ */}
-     <div className='
-      grid grid-cols-1 lg:grid-cols-2
-      gap-8 lg:gap-2
-      bg-white
-      px-6 sm:px-10 md:px-14
-      py-12 sm:py-14 md:py-16
-      max-w-4xl mx-auto
-      items-center
-    '>
+     <div className='grid items-center max-w-4xl grid-cols-1 gap-8 px-6 py-12 mx-auto bg-white lg:grid-cols-2 lg:gap-2 sm:px-10 md:px-14 sm:py-14 md:py-16'>
  
       {/* 🎬 Image — fades in from left */}
       <AnimatedSection variant="fade-left" duration={0.7}>
-        <div className='relative flex justify-center lg:justify-start overflow-visible'>
+        <div className='relative flex justify-center overflow-visible lg:justify-start'>
  
           {/* Main photo — starts smaller on mobile, full size on lg */}
           <img
@@ -247,7 +239,7 @@ export default function Product() {
           />
  
           {/* Ellipse decoration — hidden on mobile to avoid clutter */}
-          <div className='sm:block absolute top-27 left-29 sm:left-2 sm:top-8 md:top-40 z-0'>
+          <div className='absolute z-0 sm:block top-27 left-29 sm:left-2 sm:top-8 md:top-40'>
             <img
               className='w-[200px] sm:w-[240px] md:w-[270px] lg:w-w-[300px] opacity-80'
               src={Ellipse}
@@ -296,14 +288,14 @@ export default function Product() {
     </div>
 
 
-      <div className='max-w-7xl mx-auto'>
+      <div className='mx-auto max-w-7xl'>
 
         {/* 🎬 ANIMATION: "Best Seller" label + heading fades up */}
         <AnimatedSection variant="fade-up" duration={0.5}>
-          <p className='px-9 font-display5'>-Best Seller -</p>
-          <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 px-4 sm:px-6 md:px-9">
+          {/* <p className='text-center px-9 font-display5 sm:text-left'>-Best Seller -</p> */}
+          <div className="flex flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:items-center sm:px-6 md:px-9">
             <h1
-              className="text-center sm:text-left text-[24px] sm:text-[32px] md:text-[42px] lg:text-[50px]
+              className="text-center sm:text-left text-[20px] sm:text-[28px] md:text-[42px] lg:text-[40px]
                 font-display5 leading-tight">
               <span className="text-[#770523]">Best Seller </span>
               Products
@@ -336,7 +328,7 @@ export default function Product() {
                Card 1 = 0s, Card 2 = 0.1s, Card 3 = 0.2s, Card 4 = 0.3s
             This creates a smooth left-to-right wave as you scroll down
         ══════════════════════════════════════════════════ */}
-        <div className='grid grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto gap-4 p-9'>
+        <div className='grid grid-cols-2 gap-4 mx-auto lg:grid-cols-4 max-w-7xl p-9'>
           {products.map((product, index) => (
             <AnimatedSection
               key={product.id}
@@ -347,31 +339,31 @@ export default function Product() {
               <div>
                 {/* Product Image + Action Icons */}
                 <div className='relative group'>
-                  <img className='w-full object-cover' src={product.img} alt={product.name} />
+                  <img className='object-cover w-full' src={product.img} alt={product.name} />
 
                   {/* Heart + Cart icons */}
-                  <div className='flex absolute top-8/9 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-3 z-10'>
-                    <Heart className='bg-white p-2 size-9 rounded-full cursor-pointer shadow-md hover:scale-110 transition-transform' />
-                    <ShoppingCart className='bg-white p-2 size-9 rounded-full cursor-pointer shadow-md hover:scale-110 transition-transform' />
+                  <div className='absolute z-10 flex gap-3 -translate-x-1/2 -translate-y-1/2 top-8/9 left-1/2'>
+                    <Heart className='p-2 transition-transform bg-white rounded-full shadow-md cursor-pointer size-9 hover:scale-110' />
+                    <ShoppingCart className='p-2 transition-transform bg-white rounded-full shadow-md cursor-pointer size-9 hover:scale-110' />
                   </div>
                 </div>
 
                 {/* Product Info */}
                 <div>
-                  <div className='flex justify-between items-center mt-3'>
+                  <div className='flex items-center justify-between mt-3'>
                     <h3 className='font-bold text-[15.5px] sm:text-[15px] md:text-[20px] font-display5'>{product.name}</h3>
                     <p className='text-sm bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded'>★ {product.rating}</p>
                   </div>
-                  <p className='text-gray-600 text-sm mt-2'>
+                  <p className='mt-2 text-sm text-gray-600'>
                     Moist vanilla sponge layered with silky buttercream. Fully customisable flavours, sizes, and decorations for any special occasion.
                   </p>
-                  <p className='font-bold text-lg mt-2 text-amber-900'>
+                  <p className='mt-2 text-lg font-bold text-amber-900'>
                     {product.price}
-                    <span className='line-through text-gray-400 text-sm font-normal ml-2'>{product.old}</span>
+                    <span className='ml-2 text-sm font-normal text-gray-400 line-through'>{product.old}</span>
                   </p>
-                  <button className='w-full flex items-center justify-center gap-2 bg-[#DA9100] text-white py-2.5 rounded-xl mt-4 hover:bg-[#EDC483] transition-colors font-display5'>
+                  {/* <button className='w-full flex items-center justify-center gap-2 bg-[#DA9100] text-white py-2.5 rounded-xl mt-4 hover:bg-[#EDC483] transition-colors font-display5'>
                     <ShoppingCart size={18} /> Add to Cart
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </AnimatedSection>

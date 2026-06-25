@@ -39,7 +39,7 @@ const testimonials = [
 ];
 
 const StarRating = ({ count }) => (
-  <div className="flex mt-0.5 gap-0.5">
+  <div className="flex mt-0.5 gap-0.5 size-[2]">
     {[1, 2, 3, 4, 5].map((i) => (
       <span key={i} className={`text-lg ${i <= count ? "text-yellow-500" : "text-gray-300"}`}>
         ★
@@ -50,12 +50,12 @@ const StarRating = ({ count }) => (
 
 const TestimonialCard = ({ testimonial }) => (
   <div className="flex flex-col justify-between h-full bg-white p-9">
-    <p className="leading-relaxed text-gray-700 font-display5">{testimonial.text}</p>
+    <p className="leading-relaxed text-gray-700 text-[12px] lg:text-[15px] font-display5">{testimonial.text}</p>
     <div className="flex gap-4 mt-4">
-      <img className="object-cover rounded-full w-14 h-14" src={testimonial.avatar} />
+      <img className="object-cover rounded-full w-9 h-9 lg:h-14 lg:w-14" src={testimonial.avatar} />
       <div>
-        <h2 className="font-bold font-display5 leading-none text-[13px]">{testimonial.name}</h2>
-        <p className="leading-none font-display5 tracking-tight text-[#A8A5A5] text-[12px] mt-1">{testimonial.role}</p>
+        <h2 className="font-bold font-display5 leading-none text-[11px]">{testimonial.name}</h2>
+        <p className="leading-none font-display5 tracking-tight text-[#A8A5A5] text-[11px]  mt-1">{testimonial.role}</p>
         <StarRating count={testimonial.stars} />
       </div>
     </div>
@@ -125,7 +125,7 @@ export default function TestimonialsSection() {
         <AnimatedSection variant="fade-down" duration={0.6}>
           <div className="text-center">
             <p>— Every Client Matters —</p>
-            <h1 className="text-[32px] font-bold tracking-tight">
+            <h1 className="text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] sm:leading-snug md:leading-tight font-bold tracking-tight">
               What our Customers are saying
             </h1>
           </div>

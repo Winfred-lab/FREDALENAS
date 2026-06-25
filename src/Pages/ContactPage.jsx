@@ -13,6 +13,7 @@ import { useState } from "react";
 import { PhoneCall } from 'lucide-react';
 import { Mail } from 'lucide-react';
 import { MapPinCheck } from 'lucide-react';
+import AnimatedSection from '../Components/AnimatedSection'; 
 
 // ── TICKER ───────────────────────────────────────────────────
 // Uses animate-scroll-left from your existing index.css
@@ -620,7 +621,7 @@ export default function ContactPage() {
       {/* ════════════════════════════════════════════════════════
           CLOSING CTA BAND
       ════════════════════════════════════════════════════════ */}
-      <section className="bg-[#8B1A1A] px-5 py-16 text-center">
+      {/* <section className="bg-[#8B1A1A] px-5 py-16 text-center">
         <p className="text-[10px] tracking-[0.3em] uppercase text-[#E8C97A] mb-3">
           Still have questions?
         </p>
@@ -647,7 +648,55 @@ export default function ContactPage() {
             💬 WhatsApp Us
           </button>
         </div>
-      </section>
+      </section> */}
+      <div className="bg-[white] px-6 py-12 sm:py-16 md:py-20">
+      <AnimatedSection variant="zoom-in" duration={0.9}>
+
+        <div className="max-w-xs mx-auto text-center sm:max-w-md md:max-w-xl lg:max-w-2xl font-display5">
+
+          {/* Heading — scales up smoothly across breakpoints */}
+          <h1 className="font-bold tracking-tight text-[#770523]
+                         text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px]
+                         leading-snug sm:leading-snug md:leading-tight">
+            Come hungry. Leave happy. <br className="hidden sm:block" />
+            That's the Fredalenas promise.
+          </h1>
+
+          {/* Subtext */}
+          <p className="text-[12px] sm:text-[13px] md:text-[14px]
+                        text-gray-500 mt-3 mb-6 mx-auto
+                        max-w-[260px] sm:max-w-sm md:max-w-md">
+            Ready to taste the difference? Place your order today or explore our full menu.
+          </p>
+
+          {/* Buttons — stack on mobile, side by side on sm+ */}
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+
+            <button className="
+              shimmer-btn
+              bg-[#DA9100] text-white
+              px-8 py-2.5
+              text-[13px] sm:text-[14px]
+              w-full sm:w-auto
+              transition-opacity hover:opacity-90
+            ">
+              Explore our Snacks
+            </button>
+
+            <button className="
+              border border-[#DA9100] text-[#DA9100]
+              px-8 py-2.5
+              text-[13px] sm:text-[14px]
+              w-full sm:w-auto
+              transition-colors hover:bg-[#DA9100] hover:text-white
+            ">
+              Our Story
+            </button>
+
+          </div>
+        </div>
+      </AnimatedSection>
+    </div>
 
     </div>
   );
